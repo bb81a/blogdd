@@ -15,6 +15,7 @@ module.exports = {
     'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/classnames-order': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
   },
   overrides: [
