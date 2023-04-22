@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 
 import '@/styles/globals.css'
+import Header from '@/components/header'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,7 +18,10 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="min-h-screen bg-white font-sans text-slate-900 antialiased">
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="container">{children}</main>
+        </div>
       </body>
     </html>
   )
