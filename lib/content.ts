@@ -25,7 +25,7 @@ export function getAllAuthors(): Author[] {
 }
 
 export function getPost(slug: string): Post {
-  const post = allPosts.find((post) => post.slug === slug)
+  const post = allPosts.find((post) => post.slugAsParams === slug)
 
   if (!post) {
     throw new Error(`Cannot find any post with slug: ${slug}`)
@@ -35,7 +35,7 @@ export function getPost(slug: string): Post {
 }
 
 export function getSnippet(slug: string): Snippet {
-  const snippet = allSnippets.find((snippet) => snippet.slug === slug)
+  const snippet = allSnippets.find((snippet) => snippet.slugAsParams === slug)
 
   if (!snippet) {
     throw new Error(`Cannot find any snippet with slug: ${slug}`)

@@ -1,3 +1,5 @@
+import { getAllPosts } from '@/lib/content'
+
 export default function Home() {
   return (
     <main>
