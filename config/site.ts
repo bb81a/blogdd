@@ -8,6 +8,22 @@ const siteConfig = {
     github: 'https://github.com/dangminhngo',
     linkedin: 'https://linkedin.com/dangminhngo',
   },
+  sandpack: {
+    bundler: 'https://sandpack-bundler-dangminhngo.vercel.app',
+    timeout: 10000,
+  },
+  giscus: {
+    src: 'https://giscus.app/client.js',
+    repo: 'dangminhngo/blog',
+    repoId: 'R_kgDOJVpgjw',
+    category: 'General',
+    categoryId: 'DIC_kwDOJVpgj84CVy5b',
+    mapping: 'title',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '1',
+    inputPosition: 'top',
+  },
 }
 
 export default siteConfig

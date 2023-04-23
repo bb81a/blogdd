@@ -10,6 +10,20 @@ authors:
   - dangminhngo
 ---
 
+<Playground
+  files={{
+    '/App.js': `import { useState } from 'react' \n
+export default function App() {
+  const [counter, setCounter] = useState(0)
+  return (
+    <div>
+      <span>{counter}</span>
+      <button onClick={() => setCounter(c => c + 1)}>Click</button>
+    </div>
+  )
+}`}}
+/>
+
 <Callout>
   The text below is from the [Tailwind
   CSS](https://play.tailwindcss.com/uj1vGACRJA?layout=preview) docs. I copied it

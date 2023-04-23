@@ -4,6 +4,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { cn } from '@/lib/helpers'
 import Callout from './callout'
+import Playground from './playground'
 
 export interface MdxProps {
   code: string
@@ -147,7 +148,7 @@ const components = {
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      className={cn('rounded-md border border-slate-200', className)}
+      className={cn('mt-6 rounded-md border border-slate-200', className)}
       alt={alt}
       {...props}
     />
@@ -157,10 +158,7 @@ const components = {
   ),
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className={cn(
-        'my-6 overflow-x-auto rounded-lg bg-slate-900 p-4 leading-6',
-        className
-      )}
+      className={cn('my-6 overflow-x-auto rounded-lg p-4 leading-6', className)}
       {...props}
     />
   ),
@@ -181,4 +179,5 @@ const components = {
     ),
   Callout,
   Image,
+  Playground,
 }
