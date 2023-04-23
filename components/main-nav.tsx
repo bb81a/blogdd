@@ -30,7 +30,7 @@ export default function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-12">
       <Link href="/" className="flex items-center gap-2 text-slate-700">
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold">{siteConfig.name}</span>

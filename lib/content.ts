@@ -1,3 +1,5 @@
+import { compareDesc } from 'date-fns'
+
 import {
   Author,
   Post,
@@ -5,8 +7,7 @@ import {
   allAuthors,
   allPosts,
   allSnippets,
-} from '@/.contentlayer/generated'
-import { compareDesc } from 'date-fns'
+} from '.contentlayer/generated'
 
 export function getAllPosts(): Post[] {
   return allPosts

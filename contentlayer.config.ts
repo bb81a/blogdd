@@ -127,7 +127,7 @@ export const Author = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: './content',
+  contentDirPath: './_content',
   documentTypes: [Post, Snippet, Author],
   mdx: {
     remarkPlugins: [remarkGfm],
