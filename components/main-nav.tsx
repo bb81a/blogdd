@@ -21,8 +21,8 @@ const items = [
     href: '/snippets',
   },
   {
-    title: 'Contact',
-    href: '/contact',
+    title: 'About',
+    href: '/about',
   },
 ]
 
