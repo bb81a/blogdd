@@ -7,6 +7,7 @@ const siteConfig = {
     twitter: 'https://twitter.com/dangminhngo',
     github: 'https://github.com/dangminhngo',
     linkedin: 'https://linkedin.com/dangminhngo',
+    portfolio: 'https://dangminhngo.github.io',
   },
   sandpack: {
     bundler: 'https://sandpack-bundler-dangminhngo.vercel.app',
@@ -15,9 +16,9 @@ const siteConfig = {
   giscus: {
     src: 'https://giscus.app/client.js',
     repo: 'dangminhngo/blog',
-    repoId: 'R_kgDOJVpgjw',
+    repoId: 'R_kgDOJZ67kg',
     category: 'General',
-    categoryId: 'DIC_kwDOJVpgj84CVy5b',
+    categoryId: 'DIC_kwDOJZ67ks4CV_Fo',
     mapping: 'title',
     strict: '0',
     reactionsEnabled: '1',

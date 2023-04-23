@@ -1,8 +1,11 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 
+import siteConfig from '@/config/site'
 import { getAllPosts, getAuthors, getPost } from '@/lib/content'
-import { formatDate } from '@/lib/helpers'
+import { absoluteUrl, formatDate } from '@/lib/helpers'
 import AuthorProfile from '@/components/author-profile'
+import Comments from '@/components/comments'
 import Mdx from '@/components/mdx'
 import AspectRatio from '@/components/ui/aspect-ratio'
 
@@ -17,6 +20,48 @@ export async function generateStaticParams(): Promise<
 > {
   const posts = getAllPosts()
   return posts.map((post) => ({ slug: post.slugAsParams }))
+}
+
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const post = getPost(params.slug)
+
+  if (!post) {
+    return {}
+  }
+
+  const url = process.env.NEXT_PUBLIC_APP_URL
+
+  const ogUrl = new URL(`${url}/api/og`)
+  ogUrl.searchParams.set('heading', post.title)
+  ogUrl.searchParams.set('type', siteConfig.name)
+  ogUrl.searchParams.set('mode', 'light')
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: absoluteUrl(post.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [ogUrl.toString()],
+    },
+  }
 }
 
 export default function PostPage({ params }: PostPageProps) {
@@ -54,6 +99,9 @@ export default function PostPage({ params }: PostPageProps) {
         </AspectRatio>
       </div>
       <Mdx code={post.body.code} />
+      <div className="mt-12">
+        <Comments />
+      </div>
     </div>
   )
 }

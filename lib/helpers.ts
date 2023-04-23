@@ -9,3 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function formatDate(input: string | number, fmt: string): string {
   return format(parseISO(input.toString()), fmt)
 }
+
+export function absoluteUrl(path: string) {
+  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`
+}

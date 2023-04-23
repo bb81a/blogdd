@@ -1,8 +1,11 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 
+import siteConfig from '@/config/site'
 import { getAllSnippets, getAuthors, getSnippet } from '@/lib/content'
-import { formatDate } from '@/lib/helpers'
+import { absoluteUrl, formatDate } from '@/lib/helpers'
 import AuthorProfile from '@/components/author-profile'
+import Comments from '@/components/comments'
 import Mdx from '@/components/mdx'
 import AspectRatio from '@/components/ui/aspect-ratio'
 
@@ -17,6 +20,48 @@ export async function generateStaticParams(): Promise<
 > {
   const snippets = getAllSnippets()
   return snippets.map((snippet) => ({ slug: snippet.slugAsParams }))
+}
+
+export async function generateMetadata({
+  params,
+}: SnippetPageProps): Promise<Metadata> {
+  const snippet = getSnippet(params.slug)
+
+  if (!snippet) {
+    return {}
+  }
+
+  const url = process.env.NEXT_PUBLIC_APP_URL
+
+  const ogUrl = new URL(`${url}/api/og`)
+  ogUrl.searchParams.set('heading', snippet.title)
+  ogUrl.searchParams.set('type', siteConfig.name)
+  ogUrl.searchParams.set('mode', 'light')
+
+  return {
+    title: snippet.title,
+    description: snippet.description,
+    openGraph: {
+      title: snippet.title,
+      description: snippet.description,
+      type: 'article',
+      url: absoluteUrl(snippet.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: snippet.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: snippet.title,
+      description: snippet.description,
+      images: [ogUrl.toString()],
+    },
+  }
 }
 
 export default function SnippetPage({ params }: SnippetPageProps) {
@@ -54,6 +99,9 @@ export default function SnippetPage({ params }: SnippetPageProps) {
         </AspectRatio>
       </div>
       <Mdx code={snippet.body.code} />
+      <div className="mt-12">
+        <Comments />
+      </div>
     </div>
   )
 }
