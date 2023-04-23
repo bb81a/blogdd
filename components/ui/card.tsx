@@ -8,7 +8,10 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function Card({ className, ...props }: CardProps) {
   return (
     <div
-      className={cn('overflow-hidden rounded-lg border', className)}
+      className={cn(
+        'flex flex-col overflow-hidden rounded-lg border',
+        className
+      )}
       {...props}
     />
   )

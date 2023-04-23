@@ -1,5 +1,5 @@
 const siteConfig = {
-  name: 'Dang Minh Ngo',
+  name: 'Dang Minh',
   description: "Dang Minh Ngo's Programming Blog",
   url: 'https://dangminhngo.vercel.app',
   ogImage: 'https://dangminhngo.vercel.app/og.jpg',
