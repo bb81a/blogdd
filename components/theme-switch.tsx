@@ -1,16 +1,25 @@
-'use client'
+import React from 'react'
 
-import { useState } from 'react'
+import { cn } from '@/lib/helpers'
 
-export default function ThemeSwitch() {
-  const [isDarkTheme, setDarkTheme] = useState(false)
+interface ThemeSwitchProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  isDarkTheme?: boolean
+}
 
-  return (
+const ThemeSwitch = React.forwardRef<HTMLButtonElement>(
+  ({ className, isDarkTheme = false, ...props }: ThemeSwitchProps, ref) => (
     <button
-      className="rounded-full border border-slate-300"
-      onClick={() => setDarkTheme((t) => !t)}
+      ref={ref}
+      className={cn('rounded-full border border-slate-300', className)}
+      {...props}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width={48} height={24}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={48}
+        height={24}
+        className="pointer-events-none"
+      >
         <mask
           id="a"
           width={48}
@@ -125,4 +134,8 @@ export default function ThemeSwitch() {
       </svg>
     </button>
   )
-}
+)
+
+ThemeSwitch.displayName = 'ThemeSwitch'
+
+export default ThemeSwitch
