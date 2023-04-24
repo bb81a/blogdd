@@ -6,6 +6,7 @@ import '@code-hike/mdx/dist/index.css'
 import siteConfig from '@/config/site'
 import { absoluteUrl } from '@/lib/helpers'
 import { ThemeProvider } from '@/lib/theme-context'
+import Footer from '@/components/footer'
 import Header from '@/components/header'
 
 const sans = Sans({
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="container">{children}</main>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
