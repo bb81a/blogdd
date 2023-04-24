@@ -70,7 +70,6 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = getPost(params.slug)
   const authors = getAuthors(post.authors)
   const toc = await getTableOfContents(post.body.raw)
-  console.log(toc)
 
   return (
     <div className="mx-auto max-w-2xl py-24">
