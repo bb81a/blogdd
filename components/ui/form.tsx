@@ -33,7 +33,7 @@ Form.Input = forwardRef<HTMLInputElement, FormInputProps>(
     return (
       <input
         className={cn(
-          'dark:focus:ring-400 rounded border border-slate-200 bg-slate-50 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:border-slate-700 dark:bg-slate-800',
+          'rounded border border-slate-200 bg-slate-50 px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:focus:ring-slate-400',
           className
         )}
         ref={ref}
@@ -53,18 +53,18 @@ Form.Submit = function FormSubmit({ className, ...props }: FormSubmitProps) {
   )
 }
 
-const messageVariants = cva('', {
+const messageVariants = cva('text-sm', {
   variants: {
     type: {
-      default: '',
-      error: '',
-      warning: '',
+      default: 'text-slate-800 dark:text-slate-100',
+      error: 'text-red-500 dark:text-red-400',
+      validation: 'text-amber-500 dark:text-amber-400',
     },
   },
 })
 
 interface FormMessageProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends React.HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof messageVariants> {}
 
 Form.Message = function FormMessage({
@@ -72,9 +72,7 @@ Form.Message = function FormMessage({
   type,
   ...props
 }: FormMessageProps) {
-  return (
-    <span className={cn(messageVariants({ type }), className)} {...props} />
-  )
+  return <p className={cn(messageVariants({ type }), className)} {...props} />
 }
 
 export default Form

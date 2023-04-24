@@ -1,4 +1,11 @@
-import * as z from 'zod'
+import { z } from 'zod'
+
+export const newsletterSchema = z
+  .object({
+    firstName: z.string(),
+    email: z.string().email(),
+  })
+  .required()
 
 export const ogImageSchema = z.object({
   heading: z.string(),

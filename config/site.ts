@@ -26,6 +26,11 @@ const siteConfig = {
     emitMetadata: '1',
     inputPosition: 'top',
   },
+  mailchimp: {
+    apiKey: process.env.MAILCHIMP_API_KEY ?? '',
+    audienceId: process.env.MAILCHIMP_AUDIENCE_ID ?? '',
+    dc: process.env.MAILCHIMP_DC ?? '',
+  },
 }
 
 export default siteConfig

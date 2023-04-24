@@ -18,6 +18,7 @@ module.exports = {
       slate: colors.gray,
       red: colors.red,
       blue: colors.blue,
+      amber: colors.amber,
     },
     container: {
       center: true,
