@@ -45,12 +45,12 @@ export default function MobileNav() {
               isMobileNavVisible
                 ? 'pointer-events-auto scale-100 opacity-100'
                 : 'pointer-events-none scale-125 opacity-0'
-            } flex h-full w-full flex-col gap-8 bg-white duration-200 dark:bg-slate-800 md:hidden`}
+            } flex h-full w-full flex-col gap-8 bg-white duration-200 delay-100 dark:bg-slate-800 md:hidden`}
           >
-            <div className="container border-b border-slate-200 py-4 dark:border-slate-700">
+            <div className="container border-b border-slate-100 py-4 dark:border-slate-800">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-slate-700 dark:text-slate-200"
+                className="flex items-center gap-2 text-slate-800 dark:text-slate-100"
               >
                 <Logo className="h-8 w-8" />
               </Link>

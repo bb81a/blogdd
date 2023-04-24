@@ -47,7 +47,7 @@ export default function MainNav({
               <Link
                 href={item.href}
                 className={cn(
-                  'flex items-center py-2 text-2xl font-semibold text-slate-500 dark:text-slate-400 md:py-0 md:text-sm',
+                  'flex items-center py-1 text-2xl font-semibold text-slate-500 dark:text-slate-400 md:py-0 md:text-sm',
                   (item.href === '/'
                     ? pathname === item.href
                     : pathname.startsWith(item.href)) &&
@@ -69,7 +69,12 @@ export default function MainNav({
           <ThemeSwitch isDarkTheme={isDarkTheme} onClick={toggle} />
         </Tooltip>
         <Tooltip tooltip="RSS Feed">
-          <Link href="/rss.xml" className="text-slate-600 dark:text-slate-300">
+          <Link
+            href="/rss.xml"
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-600 dark:text-slate-300"
+          >
             <Feed />
           </Link>
         </Tooltip>
