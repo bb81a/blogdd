@@ -4,9 +4,11 @@ import Image from 'next/image'
 import siteConfig from '@/config/site'
 import { getAllPosts, getAuthors, getPost } from '@/lib/content'
 import { absoluteUrl, formatDate } from '@/lib/helpers'
+import { getTableOfContents } from '@/lib/toc'
 import AuthorProfile from '@/components/author-profile'
 import Comments from '@/components/comments'
 import Mdx from '@/components/mdx'
+import TableOfContents from '@/components/table-of-contents'
 import AspectRatio from '@/components/ui/aspect-ratio'
 
 interface PostPageProps {
@@ -64,9 +66,11 @@ export async function generateMetadata({
   }
 }
 
-export default function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const post = getPost(params.slug)
   const authors = getAuthors(post.authors)
+  const toc = await getTableOfContents(post.body.raw)
+  console.log(toc)
 
   return (
     <div className="mx-auto max-w-2xl py-24">
@@ -103,6 +107,7 @@ export default function PostPage({ params }: PostPageProps) {
             className="rounded-lg border border-slate-200 dark:border-slate-700"
           />
         </AspectRatio>
+        <TableOfContents toc={toc} />
       </div>
       <Mdx code={post.body.code} />
       <div className="mt-12">
