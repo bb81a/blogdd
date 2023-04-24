@@ -19,13 +19,13 @@ export default function AuthorProfile({
       <Image
         src={avatar}
         alt={name}
-        width={48}
-        height={48}
+        width={40}
+        height={40}
         className="rounded-full border border-slate-300 dark:border-slate-600"
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col text-sm">
         <span className="font-semibold">{name}</span>
-        <span className="text-sm text-slate-600 dark:text-slate-300">
+        <span className="text-slate-600 dark:text-slate-300">
           {description}
         </span>
       </div>

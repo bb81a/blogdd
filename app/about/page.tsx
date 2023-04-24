@@ -23,9 +23,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="space-y-6">
-          <h1 className="text-center text-3xl font-bold">
-            Get to know me before reading my content
-          </h1>
+          <h1 className="text-center text-3xl font-bold">And more about me</h1>
           <div className="space-y-6 leading-7">
             <p>
               Hi guys! My name is Dang Minh Ngo. I am self-taught front-end

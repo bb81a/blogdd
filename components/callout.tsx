@@ -7,7 +7,7 @@ const calloutVariants = cva('my-6 flex rounded-md border border-l-4 p-4', {
     type: {
       default:
         'border-slate-300 bg-slate-50 dark:border-slate-600 dark:bg-slate-800',
-      warning: 'border-sky-400 bg-sky-50',
+      warning: 'border-amber-400 bg-amber-50',
       danger: 'border-red-400 bg-red-50',
     },
   },

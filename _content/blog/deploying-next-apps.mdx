@@ -10,6 +10,68 @@ authors:
   - dangminhngo
 ---
 
+# Filenames
+
+Adding a filename to the codeblock
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+## Tabs
+
+To add more tabs, wrap multiple codeblocks with `<CH.Code/>`:
+
+<CH.Code>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+
+## Panels
+
+The _editor_ can be splitted vertically in two panels using `---`
+
+<CH.Code>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+---
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+
 <Callout>
   The text below is from the [Tailwind
   CSS](https://play.tailwindcss.com/uj1vGACRJA?layout=preview) docs. I copied it

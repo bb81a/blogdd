@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { remarkCodeHike } from '@code-hike/mdx'
 import {
   ComputedFields,
   defineDocumentType,
@@ -12,6 +13,8 @@ import rehypePrettyCode, {
 } from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+
+import theme from './assets/themes/proxima-vscode-theme.json'
 
 const computedFields: ComputedFields = {
   slug: {
@@ -130,7 +133,7 @@ export default makeSource({
   contentDirPath: './_content',
   documentTypes: [Post, Snippet, Author],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, [remarkCodeHike, { theme, lineNumbers: false }]],
     rehypePlugins: [
       rehypeAccessibleEmojis,
       [

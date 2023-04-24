@@ -1,4 +1,5 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
+const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
@@ -10,6 +11,14 @@ module.exports = {
   ],
   darkMode: ['class'],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#fff',
+      slate: colors.gray,
+      red: colors.red,
+      blue: colors.blue,
+    },
     container: {
       center: true,
       padding: '2rem',

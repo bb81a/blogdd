@@ -25,7 +25,7 @@ export default function PostCard({
       <Card className="relative h-full w-full border-slate-200 transition-colors duration-200 delay-75 group-hover:border-slate-400 dark:border-slate-700 dark:group-hover:border-slate-500">
         <Card.Header>
           <AspectRatio ratio={16 / 9} className="relative">
-            <Image src={image} alt={title} fill={true} />
+            <Image src={image} alt={title} fill={true} className="rounded-md" />
           </AspectRatio>
         </Card.Header>
         <Card.Content className="flex flex-col gap-2">

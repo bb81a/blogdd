@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image, { ImageProps } from 'next/image'
 import { useMDXComponent } from 'next-contentlayer/hooks'
@@ -177,10 +179,27 @@ const components = {
         {...props}
       />
     ),
-  Callout,
+  div: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLDivElement> & {
+    'data-rehype-pretty-code-title'?: string
+  }) =>
+    props['data-rehype-pretty-code-title'] === undefined ? (
+      <div className={className} {...props} />
+    ) : (
+      <div
+        className={cn(
+          'relative -mb-6 rounded-tl-lg rounded-tr-lg bg-slate-800 px-4 py-2 text-sm text-slate-400 before:absolute before:left-0 before:top-full before:h-2 before:w-full before:bg-[#242d2f] before:content-[""]',
+          className
+        )}
+        {...props}
+      />
+    ),
   Image: ({ className, ...props }: ImageProps) => (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image className={cn('mt-6 rounded-md', className)} {...props} />
   ),
+  Callout,
   Playground,
 }

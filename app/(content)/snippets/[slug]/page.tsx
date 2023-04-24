@@ -70,22 +70,24 @@ export default function SnippetPage({ params }: SnippetPageProps) {
 
   return (
     <div className="mx-auto max-w-2xl py-24">
-      <div className="flex flex-col gap-8">
-        <time
-          dateTime={snippet.date}
-          className="text-sm text-slate-600 dark:text-slate-300"
-        >
-          Published on {formatDate(snippet.date, 'LLL dd, yyyy')}
-        </time>
+      <div className="flex flex-col gap-10">
+        <div className="flex items-center justify-between text-sm">
+          <time
+            dateTime={snippet.date}
+            className="text-slate-500 dark:text-slate-400"
+          >
+            Published on {formatDate(snippet.date, 'LLL dd, yyyy')}
+          </time>
+          <div className="text-slate-500 dark:text-slate-400">
+            SNIPPET -{' '}
+            <strong className="font-medium text-slate-700 dark:text-slate-200">
+              {snippet.tags.join(', ')}
+            </strong>
+          </div>
+        </div>
         <h1 className="text-4xl font-bold leading-4 tracking-tighter">
           {snippet.title}
         </h1>
-        <div className="text-slate-500 dark:text-slate-400">
-          SNIPPET -{' '}
-          <strong className="font-medium text-slate-700 dark:text-slate-200">
-            {snippet.tags.join(', ')}
-          </strong>
-        </div>
         <div className="flex items-center gap-4">
           {authors.map((author) => (
             <AuthorProfile key={author.name} {...author} />
