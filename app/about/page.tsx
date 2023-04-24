@@ -16,8 +16,8 @@ export default function AboutPage() {
               className="rounded-full border-2 border-slate-100 dark:border-slate-800"
               style={{ imageRendering: 'crisp-edges' }}
             />
-            <div className="text-4xl font-bold">Dang Minh Ngo</div>
-            <div className="text-xl">
+            <div className="text-3xl font-bold md:text-4xl">Dang Minh Ngo</div>
+            <div className="whitespace-pre text-center text-lg md:text-lg">
               Front-end Developer. Pixel Art Amateur.
             </div>
           </div>

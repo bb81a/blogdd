@@ -1,28 +1,27 @@
-'use client'
+import Link from 'next/link'
 
-import { useTheme } from '@/hooks'
-
+import siteConfig from '@/config/site'
+import Logo from './logo'
 import MainNav from './main-nav'
-import Feed from './svgs/feed'
-import ThemeSwitch from './theme-switch'
-import Tooltip from './ui/tooltip'
+import MobileNav from './mobile-nav'
 
 export default function Header() {
-  const { isDarkTheme, toggle } = useTheme()
-
   return (
-    <header className="container flex items-center justify-between border-b border-slate-200 py-6 dark:border-slate-700">
-      <MainNav />
-      <div className="flex gap-4">
-        <Tooltip tooltip="Change theme">
-          <ThemeSwitch isDarkTheme={isDarkTheme} onClick={toggle} />
-        </Tooltip>
-        <Tooltip tooltip="RSS Feed">
-          <button className="text-slate-600 dark:text-slate-300">
-            <Feed />
-          </button>
-        </Tooltip>
-      </div>
-    </header>
+    <>
+      <header className="border-b border-slate-200 dark:border-slate-700">
+        <div className="container flex items-center gap-8 py-4">
+          <Link href="/" className="flex items-center gap-2">
+            <Logo className="h-8 w-8" />
+            <span className="hidden text-2xl font-bold md:block">
+              {siteConfig.name}
+            </span>
+          </Link>
+          <div className="hidden flex-1 md:block">
+            <MainNav />
+          </div>
+        </div>
+      </header>
+      <MobileNav />
+    </>
   )
 }

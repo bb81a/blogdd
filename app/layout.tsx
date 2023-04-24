@@ -74,6 +74,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
             <main className="container">{children}</main>
             <Footer />
           </div>
+          <div id="mobile-nav" />
         </ThemeProvider>
       </body>
     </html>

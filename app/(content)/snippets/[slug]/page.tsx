@@ -76,7 +76,8 @@ export default function SnippetPage({ params }: SnippetPageProps) {
             dateTime={snippet.date}
             className="text-slate-500 dark:text-slate-400"
           >
-            Published on {formatDate(snippet.date, 'LLL dd, yyyy')}
+            <span className="hidden sm:inline">Published on</span>{' '}
+            {formatDate(snippet.date, 'LLL dd, yyyy')}
           </time>
           <div className="text-slate-500 dark:text-slate-400">
             SNIPPET -{' '}
@@ -85,7 +86,7 @@ export default function SnippetPage({ params }: SnippetPageProps) {
             </strong>
           </div>
         </div>
-        <h1 className="text-4xl font-bold leading-4 tracking-tighter">
+        <h1 className="text-4xl font-bold leading-tight tracking-tighter">
           {snippet.title}
         </h1>
         <div className="flex items-center gap-4">

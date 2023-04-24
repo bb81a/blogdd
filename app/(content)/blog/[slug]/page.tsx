@@ -76,7 +76,8 @@ export default function PostPage({ params }: PostPageProps) {
             dateTime={post.date}
             className="text-slate-500 dark:text-slate-400"
           >
-            Published on {formatDate(post.date, 'LLL dd, yyyy')}
+            <span className="hidden sm:inline">Published on</span>{' '}
+            {formatDate(post.date, 'LLL dd, yyyy')}
           </time>
           <div className="text-slate-500 dark:text-slate-400">
             Tags:{' '}
@@ -85,7 +86,7 @@ export default function PostPage({ params }: PostPageProps) {
             </strong>
           </div>
         </div>
-        <h1 className="text-4xl font-bold leading-4 tracking-tighter">
+        <h1 className="text-4xl font-bold leading-tight tracking-tighter">
           {post.title}
         </h1>
         <div className="flex items-center gap-4">

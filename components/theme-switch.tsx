@@ -12,7 +12,7 @@ const ThemeSwitch = React.forwardRef<HTMLButtonElement, ThemeSwitchProps>(
     <button
       ref={ref}
       className={cn(
-        'rounded-full border border-slate-300 dark:border-slate-600',
+        'overflow-hidden rounded-full border border-slate-300 dark:border-slate-600',
         className
       )}
       {...props}
