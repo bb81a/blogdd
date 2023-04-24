@@ -70,7 +70,7 @@ export default function SnippetPage({ params }: SnippetPageProps) {
 
   return (
     <div className="mx-auto max-w-2xl py-24">
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between text-sm">
           <time
             dateTime={snippet.date}

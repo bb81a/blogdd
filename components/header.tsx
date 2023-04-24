@@ -8,7 +8,7 @@ import MobileNav from './mobile-nav'
 export default function Header() {
   return (
     <>
-      <header className="border-b border-slate-200 dark:border-slate-700">
+      <header className="border-b border-slate-100 dark:border-slate-800">
         <div className="container flex items-center gap-8 py-4">
           <Link href="/" className="flex items-center gap-2">
             <Logo className="h-8 w-8" />

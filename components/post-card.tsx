@@ -22,7 +22,7 @@ export default function PostCard({
 }: PostCardProps) {
   return (
     <Link href={slug} className="group flex">
-      <Card className="relative h-full w-full border-slate-200 transition-colors duration-200 delay-75 group-hover:border-slate-400 dark:border-slate-700 dark:group-hover:border-slate-500">
+      <Card className="relative h-full w-full border-slate-100 transition-colors duration-200 delay-75 group-hover:border-slate-400 dark:border-slate-800 dark:group-hover:border-slate-500">
         <Card.Header>
           <AspectRatio ratio={16 / 9} className="relative">
             <Image src={image} alt={title} fill={true} className="rounded-md" />
@@ -30,7 +30,7 @@ export default function PostCard({
         </Card.Header>
         <Card.Content className="flex flex-col gap-2">
           <Card.Title className="text-2xl font-bold">{title}</Card.Title>
-          <Card.Description className="text-base">
+          <Card.Description className="text-base duration-200 delay-75 group-hover:text-slate-700 dark:group-hover:text-slate-200">
             {description}
           </Card.Description>
         </Card.Content>

@@ -9,9 +9,9 @@ import Twitter from './svgs/twitter'
 
 export default function Footer() {
   return (
-    <footer className="container border-t border-slate-200 dark:border-slate-700">
-      <div className="mx-auto flex max-w-4xl flex-col-reverse justify-between gap-12 py-24 md:flex-row md:gap-6">
-        <div className="flex flex-row justify-between md:flex-col">
+    <footer className="border-t border-slate-100 dark:border-slate-800">
+      <div className="container mx-auto flex max-w-4xl flex-col-reverse justify-between gap-12 py-24 md:flex-row md:gap-6">
+        <div className="flex flex-row justify-between px-6 md:flex-col md:px-0">
           <div className="flex flex-col gap-4">
             <div className="font-semibold">Sitemap</div>
             <ul className="flex flex-col gap-4">
@@ -36,7 +36,7 @@ export default function Footer() {
                   href={href}
                   className="group flex items-center gap-2 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100"
                 >
-                  <div className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                  <div className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300">
                     <Icon />
                   </div>
                   <span className="block md:hidden">{title}</span>
@@ -49,18 +49,21 @@ export default function Footer() {
           <Newsletter />
         </div>
       </div>
-      <hr className="border-t border-slate-200 dark:border-slate-700" />
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 py-6 text-sm md:flex-row">
-        <div className="text-slate-500 dark:text-slate-400">
+      <hr className="border-t border-slate-100 dark:border-slate-800" />
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 py-4 text-sm text-slate-500 dark:text-slate-400 md:flex-row">
+        <div>
           Built by{' '}
           <a
             href={siteConfig.links.portfolio}
-            className="font-medium underline"
+            className="font-medium underline duration-100 hover:text-slate-700 dark:hover:text-slate-200"
           >
             dangminhngo
           </a>
           . Illustrations by{' '}
-          <a href="https://popsy.co" className="font-medium underline">
+          <a
+            href="https://popsy.co"
+            className="font-medium underline duration-100 hover:text-slate-700 dark:hover:text-slate-200"
+          >
             Popsy
           </a>
         </div>

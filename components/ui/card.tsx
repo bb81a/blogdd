@@ -43,7 +43,12 @@ Card.Footer = function CardFooter({ className, ...props }: CardFooterProps) {
 interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 
 Card.Title = function CardTitle({ className, ...props }: CardTitleProps) {
-  return <h4 className={cn('text-lg font-medium', className)} {...props} />
+  return (
+    <h4
+      className={cn('text-lg font-medium leading-tight', className)}
+      {...props}
+    />
+  )
 }
 
 interface CardDescriptionProps
@@ -55,7 +60,7 @@ Card.Description = function CardDescription({
 }: CardDescriptionProps) {
   return (
     <p
-      className={cn('text-sm text-slate-600 dark:text-slate-300', className)}
+      className={cn('text-sm text-slate-500 dark:text-slate-400', className)}
       {...props}
     />
   )

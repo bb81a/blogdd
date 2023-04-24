@@ -8,7 +8,7 @@ interface FormProps extends React.HTMLAttributes<HTMLFormElement> {}
 function Form({ className, ...props }: FormProps) {
   return (
     <form
-      className={cn('flex flex-col items-stretch gap-4', className)}
+      className={cn('flex flex-col items-stretch gap-6', className)}
       {...props}
     />
   )

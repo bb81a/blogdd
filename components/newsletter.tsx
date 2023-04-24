@@ -1,7 +1,6 @@
 'use client'
 
 import { ChangeEventHandler, FormEventHandler, useState } from 'react'
-import { NextResponse } from 'next/server'
 import { ZodError } from 'zod'
 
 import { cn } from '@/lib/helpers'
@@ -84,15 +83,20 @@ export default function Newsletter() {
         </Form.Field>
         <Form.Submit>
           <button
-            className={cn(buttonVariants({ size: 'lg' }), '')}
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'lg' }),
+              ''
+            )}
             disabled={loading}
           >
             {loading ? 'Submitting...' : 'Subscribe'}
           </button>
         </Form.Submit>
-        <Form.Message type={type === 'error' ? 'error' : 'default'}>
-          {message}
-        </Form.Message>
+        {message !== '' && (
+          <Form.Message type={type === 'error' ? 'error' : 'default'}>
+            {message}
+          </Form.Message>
+        )}
       </Form>
     </div>
   )
