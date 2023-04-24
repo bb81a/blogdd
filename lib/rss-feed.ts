@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import RSS from 'rss'
 
 import siteConfig from '@/config/site'
@@ -43,8 +41,5 @@ export default async function generateRssFeed() {
     })
   })
 
-  fs.writeFileSync(
-    path.resolve(process.cwd(), 'public', 'rss.xml'),
-    feed.xml({ indent: true })
-  )
+  return feed.xml({ indent: true })
 }
