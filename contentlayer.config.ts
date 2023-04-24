@@ -8,9 +8,6 @@ import {
 } from 'contentlayer/source-files'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode, {
-  Options as RehypePrettyCodeOptions,
-} from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
@@ -146,36 +143,6 @@ export default makeSource({
         },
       ],
       rehypeSlug,
-      [
-        rehypePrettyCode,
-        {
-          theme: JSON.parse(
-            fs.readFileSync(
-              path.resolve(
-                process.cwd(),
-                'assets',
-                'themes',
-                'proxima-vscode-theme.json'
-              ),
-              'utf8'
-            )
-          ),
-          keepBackground: true,
-          onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
-            if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }]
-            }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted']
-          },
-        } as Partial<RehypePrettyCodeOptions>,
-      ],
     ],
   },
 })
