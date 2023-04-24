@@ -130,7 +130,10 @@ export default makeSource({
   contentDirPath: './_content',
   documentTypes: [Post, Snippet, Author],
   mdx: {
-    remarkPlugins: [remarkGfm, [remarkCodeHike, { theme, lineNumbers: false }]],
+    remarkPlugins: [
+      remarkGfm,
+      [remarkCodeHike, { theme, lineNumbers: true, showCopyButton: true }],
+    ],
     rehypePlugins: [
       rehypeAccessibleEmojis,
       [
