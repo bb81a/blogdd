@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Dang Minh | RSS Feed]]></title>
+        <description><![CDATA[Dang Minh Ngo's Programming Blog]]></description>
+        <link>https://dangminhngo.vercel.app</link>
+        <image>
+            <url>https://dangminhngo.vercel.app/logo.png</url>
+            <title>Dang Minh | RSS Feed</title>
+            <link>https://dangminhngo.vercel.app</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 24 Apr 2023 15:48:24 GMT</lastBuildDate>
+        <atom:link href="https://dangminhngo.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Mon, 24 Apr 2023 15:48:24 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2023, Dang Minh]]></copyright>
+        <item>
+            <title><![CDATA[Preview Mode for Headless CMS]]></title>
+            <description><![CDATA[How to implement preview mode in your headless CMS.]]></description>
+            <link>https://dangminhngo.vercel.app/posts//blog/preview-mode-headless-cms</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/posts//blog/preview-mode-headless-cms</guid>
+            <pubDate>Sun, 09 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dynamic Routing and Static Regeneration]]></title>
+            <description><![CDATA[How to use incremental static regeneration using dynamic routes.]]></description>
+            <link>https://dangminhngo.vercel.app/posts//blog/dynamic-routing-static-regeneration</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/posts//blog/dynamic-routing-static-regeneration</guid>
+            <pubDate>Sat, 04 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Server and Client Components]]></title>
+            <description><![CDATA[React Server Components allow developers to build applications that span the server and client.]]></description>
+            <link>https://dangminhngo.vercel.app/posts//blog/server-client-components</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/posts//blog/server-client-components</guid>
+            <pubDate>Sun, 08 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Deploying Next.js Apps]]></title>
+            <description><![CDATA[How to deploy your Next.js apps on Vercel.]]></description>
+            <link>https://dangminhngo.vercel.app/posts//blog/deploying-next-apps</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/posts//blog/deploying-next-apps</guid>
+            <pubDate>Mon, 02 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Preview Mode for Headless CMS]]></title>
+            <description><![CDATA[How to implement preview mode in your headless CMS.]]></description>
+            <link>https://dangminhngo.vercel.app/snippets//snippets/preview-mode-headless-cms</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/snippets//snippets/preview-mode-headless-cms</guid>
+            <pubDate>Sun, 09 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dynamic Routing and Static Regeneration]]></title>
+            <description><![CDATA[How to use incremental static regeneration using dynamic routes.]]></description>
+            <link>https://dangminhngo.vercel.app/snippets//snippets/dynamic-routing-static-regeneration</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/snippets//snippets/dynamic-routing-static-regeneration</guid>
+            <pubDate>Sat, 04 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Server and Client Components]]></title>
+            <description><![CDATA[React Server Components allow developers to build applications that span the server and client.]]></description>
+            <link>https://dangminhngo.vercel.app/snippets//snippets/server-client-components</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/snippets//snippets/server-client-components</guid>
+            <pubDate>Sun, 08 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Deploying Next.js Apps]]></title>
+            <description><![CDATA[How to deploy your Next.js apps on Vercel.]]></description>
+            <link>https://dangminhngo.vercel.app/snippets//snippets/deploying-next-apps</link>
+            <guid isPermaLink="true">https://dangminhngo.vercel.app/snippets//snippets/deploying-next-apps</guid>
+            <pubDate>Mon, 02 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -69,9 +69,9 @@ export default function MainNav({
           <ThemeSwitch isDarkTheme={isDarkTheme} onClick={toggle} />
         </Tooltip>
         <Tooltip tooltip="RSS Feed">
-          <button className="text-slate-600 dark:text-slate-300">
+          <Link href="/rss.xml" className="text-slate-600 dark:text-slate-300">
             <Feed />
-          </button>
+          </Link>
         </Tooltip>
       </div>
     </div>

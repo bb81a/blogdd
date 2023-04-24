@@ -3,11 +3,13 @@ import Link from 'next/link'
 import siteConfig from '@/config/site'
 import { getAllPosts } from '@/lib/content'
 import { cn } from '@/lib/helpers'
+import generateRssFeed from '@/lib/rss-feed'
 import PostCard from '@/components/post-card'
 import Hero from '@/components/svgs/hero'
 import { buttonVariants } from '@/components/ui/button'
 
-export default function Home() {
+export default async function Home() {
+  await generateRssFeed()
   const posts = getAllPosts().slice(0, 4)
 
   return (
