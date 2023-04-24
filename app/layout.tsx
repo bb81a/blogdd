@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { Inter as Sans } from 'next/font/google'
 
 import '@/styles/globals.css'
-import '@code-hike/mdx/dist/index.css'
+import '@/styles/code-hike.css'
 import siteConfig from '@/config/site'
 import { absoluteUrl } from '@/lib/helpers'
 import { ThemeProvider } from '@/lib/theme-context'
