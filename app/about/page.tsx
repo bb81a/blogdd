@@ -5,7 +5,7 @@ import siteConfig from '@/config/site'
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-2xl py-24">
-      <div className="tablet:grid-cols-2 tablet:gap-8 grid grid-cols-1 gap-16">
+      <div className="tablet:grid-cols-2 tablet:gap-8 grid grid-cols-1 gap-24">
         <div>
           <div className="flex flex-col items-center gap-4">
             <Image
