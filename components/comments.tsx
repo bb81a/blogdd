@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useTheme } from '@/hooks'
 
 import siteConfig from '@/config/site'
 
@@ -8,7 +9,8 @@ const { giscus } = siteConfig
 
 export default function Comments() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const theme = true ? 'dark_dimmed' : 'light'
+  const { isDarkTheme } = useTheme()
+  const theme = isDarkTheme ? 'dark_dimmed' : 'light'
 
   useEffect(() => {
     const parent = ref.current

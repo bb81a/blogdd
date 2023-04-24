@@ -71,15 +71,18 @@ export default function PostPage({ params }: PostPageProps) {
   return (
     <div className="mx-auto max-w-2xl py-24">
       <div className="flex flex-col gap-8">
-        <time dateTime={post.date} className="text-sm text-slate-600">
+        <time
+          dateTime={post.date}
+          className="text-sm text-slate-600 dark:text-slate-300"
+        >
           Published on {formatDate(post.date, 'LLL dd, yyyy')}
         </time>
         <h1 className="text-4xl font-bold leading-4 tracking-tighter">
           {post.title}
         </h1>
-        <div className="text-slate-500">
+        <div className="text-slate-500 dark:text-slate-400">
           Tags:{' '}
-          <strong className="font-medium text-slate-700">
+          <strong className="font-medium text-slate-700 dark:text-slate-200">
             {post.tags.join(', ')}
           </strong>
         </div>
@@ -94,7 +97,7 @@ export default function PostPage({ params }: PostPageProps) {
             alt={post.title}
             width={768}
             height={432}
-            className="rounded-lg border border-slate-200"
+            className="rounded-lg border border-slate-200 dark:border-slate-700"
           />
         </AspectRatio>
       </div>

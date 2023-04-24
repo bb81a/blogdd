@@ -2,6 +2,7 @@ const siteConfig = {
   name: 'Dang Minh',
   description: "Dang Minh Ngo's Programming Blog",
   url: 'https://dangminhngo.vercel.app',
+  email: 'dangminhngo.dev@gmail.com',
   ogImage: 'https://dangminhngo.vercel.app/og.jpg',
   links: {
     twitter: 'https://twitter.com/dangminhngo',

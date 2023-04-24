@@ -34,7 +34,7 @@ interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 Card.Footer = function CardFooter({ className, ...props }: CardFooterProps) {
   return (
     <div
-      className={cn('border-t bg-slate-50 px-6 py-4', className)}
+      className={cn('bg-slate-50 px-6 py-4 dark:bg-slate-800', className)}
       {...props}
     />
   )
@@ -53,7 +53,12 @@ Card.Description = function CardDescription({
   className,
   ...props
 }: CardDescriptionProps) {
-  return <p className={cn('text-sm text-gray-600', className)} {...props} />
+  return (
+    <p
+      className={cn('text-sm text-slate-600 dark:text-slate-300', className)}
+      {...props}
+    />
+  )
 }
 
 Card.Skeleton = function CardSkeleton() {

@@ -4,6 +4,7 @@ import { Inter as Sans } from 'next/font/google'
 import '@/styles/globals.css'
 import siteConfig from '@/config/site'
 import { absoluteUrl } from '@/lib/helpers'
+import { ThemeProvider } from '@/lib/theme-context'
 import Header from '@/components/header'
 
 const sans = Sans({
@@ -64,11 +65,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" className={`${sans.variable}`}>
-      <body className="min-h-screen bg-white font-sans text-base text-slate-900 antialiased">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="container">{children}</main>
-        </div>
+      <body className="min-h-screen bg-white font-sans text-base text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="container">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

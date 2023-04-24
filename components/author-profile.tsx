@@ -21,11 +21,13 @@ export default function AuthorProfile({
         alt={name}
         width={48}
         height={48}
-        className="rounded-full border border-slate-300"
+        className="rounded-full border border-slate-300 dark:border-slate-600"
       />
       <div className="flex flex-col">
         <span className="font-semibold">{name}</span>
-        <span className="text-sm">{description}</span>
+        <span className="text-sm text-slate-600 dark:text-slate-300">
+          {description}
+        </span>
       </div>
     </a>
   )

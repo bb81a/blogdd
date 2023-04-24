@@ -5,9 +5,10 @@ import { cn } from '@/lib/helpers'
 const calloutVariants = cva('my-6 flex rounded-md border border-l-4 p-4', {
   variants: {
     type: {
-      default: 'bg-slate-900 bg-slate-50',
-      warning: 'bg-slate-900 bg-slate-50',
-      danger: 'bg-slate-900 bg-slate-50',
+      default:
+        'border-slate-300 bg-slate-50 dark:border-slate-600 dark:bg-slate-800',
+      warning: 'border-sky-400 bg-sky-50',
+      danger: 'border-red-400 bg-red-50',
     },
   },
 })

@@ -35,13 +35,15 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <hr className="border-slate-200" />
+      <hr className="border-slate-200 dark:border-slate-700" />
       <section className="mx-auto max-w-4xl py-24">
         <div className="flex flex-col gap-6">
           <h1 className="text-5xl font-bold">Latest Blog</h1>
-          <p className="text-xl text-slate-600">Try to get something new</p>
+          <p className="text-xl text-slate-600 dark:text-slate-300">
+            Try to get something new
+          </p>
         </div>
-        <hr className="my-8 border-slate-200" />
+        <hr className="my-8 border-slate-200 dark:border-slate-700" />
         <div className="grid grid-cols-2 gap-6 self-stretch justify-self-stretch">
           {posts.map((post) => (
             <PostCard key={post.slug} {...post} />

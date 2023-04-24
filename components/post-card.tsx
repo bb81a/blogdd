@@ -22,7 +22,7 @@ export default function PostCard({
 }: PostCardProps) {
   return (
     <Link href={slug} className="group flex">
-      <Card className="relative h-full w-full transition-colors duration-200 delay-75 group-hover:border-slate-600">
+      <Card className="relative h-full w-full border-slate-200 transition-colors duration-200 delay-75 group-hover:border-slate-400 dark:border-slate-700 dark:group-hover:border-slate-500">
         <Card.Header>
           <AspectRatio ratio={16 / 9} className="relative">
             <Image src={image} alt={title} fill={true} />
@@ -35,7 +35,7 @@ export default function PostCard({
           </Card.Description>
         </Card.Content>
         <Card.Footer className="mt-auto flex items-center justify-between text-sm">
-          <time dateTime={date} className="text-slate-600">
+          <time dateTime={date} className="text-slate-600 dark:text-slate-300">
             {formatDate(date, 'LLL dd, yyyy')}
           </time>
           <div className="font-medium">{tags.join(', ')}</div>

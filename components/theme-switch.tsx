@@ -7,11 +7,14 @@ interface ThemeSwitchProps
   isDarkTheme?: boolean
 }
 
-const ThemeSwitch = React.forwardRef<HTMLButtonElement>(
-  ({ className, isDarkTheme = false, ...props }: ThemeSwitchProps, ref) => (
+const ThemeSwitch = React.forwardRef<HTMLButtonElement, ThemeSwitchProps>(
+  ({ className, isDarkTheme = false, ...props }, ref) => (
     <button
       ref={ref}
-      className={cn('rounded-full border border-slate-300', className)}
+      className={cn(
+        'rounded-full border border-slate-300 dark:border-slate-600',
+        className
+      )}
       {...props}
     >
       <svg
