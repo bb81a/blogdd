@@ -1,12 +1,18 @@
-import { useLayoutEffect } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
-export function useLockBody() {
-  useLayoutEffect((): (() => void) => {
-    const originalStyle: string = window.getComputedStyle(
-      document.body
-    ).overflow
-    document.body.style.overflow = 'hidden'
+export function useLockBody(locked = false) {
+  const [originalStyle, setOriginalStyle] = useState<string | null>(null)
 
-    return () => (document.body.style.overflow = originalStyle)
+  useLayoutEffect(() => {
+    setOriginalStyle(window.getComputedStyle(document.body).overflow)
   }, [])
+
+  useLayoutEffect(() => {
+    if (locked) {
+      document.body.style.overflow = 'hidden'
+      return
+    }
+
+    document.body.style.overflow = originalStyle ?? 'auto'
+  }, [locked, originalStyle])
 }

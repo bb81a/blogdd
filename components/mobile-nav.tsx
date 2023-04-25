@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useMounted, useToggle } from '@/hooks'
+import { useLockBody, useMounted, useToggle } from '@/hooks'
 import { createPortal } from 'react-dom'
 
 import Logo from './logo'
@@ -11,6 +11,8 @@ export default function MobileNav() {
   const mounted = useMounted()
   const [isMobileNavVisible, toggleMobileNavVisible, setMobileNavVisible] =
     useToggle()
+
+  useLockBody(isMobileNavVisible)
 
   return mounted
     ? createPortal(
