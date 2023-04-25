@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { TableOfContents as TOC } from '@/lib/toc'
 
 export default function TableOfContents({ toc }: { toc: TOC }) {
@@ -13,7 +15,7 @@ function TocList({ items, level }: { items: TOC['items']; level: number }) {
   return (
     <ul className="flex list-inside list-disc flex-col gap-1">
       {items?.map((item) => (
-        <>
+        <React.Fragment key={item.title}>
           <li style={{ marginLeft: `${level - 1}rem` }}>
             <a
               href={item.url}
@@ -23,7 +25,7 @@ function TocList({ items, level }: { items: TOC['items']; level: number }) {
             </a>
           </li>
           <TocList items={item.items} level={level + 1} />
-        </>
+        </React.Fragment>
       ))}
     </ul>
   )

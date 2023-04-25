@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import { remarkCodeHike } from '@code-hike/mdx'
 import {
   ComputedFields,

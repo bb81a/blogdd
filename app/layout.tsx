@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Inter as Sans } from 'next/font/google'
+import { JetBrains_Mono as Mono, Inter as Sans } from 'next/font/google'
 
 import '@/styles/globals.css'
 import '@/styles/code-hike.css'
@@ -11,7 +11,13 @@ import Header from '@/components/header'
 
 const sans = Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--tf-sans',
+  display: 'swap',
+})
+
+const mono = Mono({
+  subsets: ['latin'],
+  variable: '--tf-mono',
   display: 'swap',
 })
 
@@ -66,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <html lang="en" className={`${sans.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-white font-sans text-base text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
