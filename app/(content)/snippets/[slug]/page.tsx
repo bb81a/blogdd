@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 import siteConfig from '@/config/site'
 import { getAllSnippets, getAuthors, getSnippet } from '@/lib/content'
@@ -66,6 +67,9 @@ export async function generateMetadata({
 
 export default function SnippetPage({ params }: SnippetPageProps) {
   const snippet = getSnippet(params.slug)
+
+  if (!snippet) return notFound()
+
   const authors = getAuthors(snippet.authors)
 
   return (

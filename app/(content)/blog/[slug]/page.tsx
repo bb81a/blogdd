@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 import siteConfig from '@/config/site'
 import { getAllPosts, getAuthors, getPost } from '@/lib/content'
@@ -29,9 +30,7 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
   const post = getPost(params.slug)
 
-  if (!post) {
-    return {}
-  }
+  if (!post) return {}
 
   const url = process.env.NEXT_PUBLIC_APP_URL
 
@@ -68,6 +67,9 @@ export async function generateMetadata({
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = getPost(params.slug)
+
+  if (!post) return notFound()
+
   const authors = getAuthors(post.authors)
   const toc = await getTableOfContents(post.body.raw)
 

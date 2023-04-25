@@ -71,7 +71,9 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="container">{children}</main>
+            <main className="container min-h-[calc(100vh-64px)]">
+              {children}
+            </main>
             <Footer />
           </div>
           <div id="mobile-nav" />

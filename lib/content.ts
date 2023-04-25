@@ -25,22 +25,14 @@ export function getAllAuthors(): Author[] {
   return allAuthors.sort((a, b) => Number(a.name > b.name))
 }
 
-export function getPost(slug: string): Post {
+export function getPost(slug: string): Post | undefined {
   const post = allPosts.find((post) => post.slugAsParams === slug)
-
-  if (!post) {
-    throw new Error(`Cannot find any post with slug: ${slug}`)
-  }
 
   return post
 }
 
-export function getSnippet(slug: string): Snippet {
+export function getSnippet(slug: string): Snippet | undefined {
   const snippet = allSnippets.find((snippet) => snippet.slugAsParams === slug)
-
-  if (!snippet) {
-    throw new Error(`Cannot find any snippet with slug: ${slug}`)
-  }
 
   return snippet
 }
