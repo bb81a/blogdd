@@ -7,6 +7,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { cn } from '@/lib/helpers'
 import Callout from './callout'
 import Playground from './playground'
+import Youtube from './youtube'
 
 export interface MdxProps {
   code: string
@@ -98,7 +99,7 @@ const components = {
   }: React.QuoteHTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className={cn(
-        'mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-100 [&>*]:text-slate-600 dark:[&>*]:text-slate-300',
+        'mt-6 border-l-4 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-100 [&>*]:text-slate-600 dark:[&>*]:text-slate-300',
         className
       )}
       {...props}
@@ -173,7 +174,7 @@ const components = {
     ) : (
       <code
         className={cn(
-          'relative rounded border border-slate-200 bg-slate-50 px-[0.3rem] py-[0.2rem] font-mono text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300',
+          'relative rounded border border-slate-100 bg-slate-50 px-[0.3rem] py-[0.2rem] font-mono text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300',
           className
         )}
         {...props}
@@ -202,4 +203,5 @@ const components = {
   ),
   Callout,
   Playground,
+  Youtube,
 }
