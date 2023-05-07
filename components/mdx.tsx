@@ -5,6 +5,7 @@ import Image, { ImageProps } from 'next/image'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { cn } from '@/lib/helpers'
+import Bookmark from './bookmark'
 import Callout from './callout'
 import Playground from './playground'
 import Youtube from './youtube'
@@ -120,10 +121,7 @@ const components = {
       {...props}
     />
   ),
-  th: ({
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLTableHeaderCellElement>) => (
+  th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
         'border border-slate-200 bg-slate-100 px-4 py-2 text-left font-semibold dark:border-slate-700 dark:bg-slate-800 [&[align=center]]:text-center [&[align=right]]:text-right',
@@ -132,10 +130,7 @@ const components = {
       {...props}
     />
   ),
-  td: ({
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLTableDataCellElement>) => (
+  td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
         'border border-slate-200 px-4 py-2 text-left dark:border-slate-700 [&[align=center]]:text-center [&[align=right]]:text-right',
@@ -204,4 +199,5 @@ const components = {
   Callout,
   Playground,
   Youtube,
+  Bookmark,
 }

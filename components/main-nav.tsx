@@ -24,6 +24,10 @@ const items = [
     href: '/snippets',
   },
   {
+    title: 'Bookmarks',
+    href: '/bookmarks',
+  },
+  {
     title: 'About',
     href: '/about',
   },

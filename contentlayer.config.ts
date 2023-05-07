@@ -124,9 +124,24 @@ export const Author = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Bookmarks = defineDocumentType(() => ({
+  name: 'Bookmarks',
+  filePathPattern: `bookmarks.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: './_content',
-  documentTypes: [Post, Snippet, Author],
+  documentTypes: [Post, Snippet, Author, Bookmarks],
   mdx: {
     remarkPlugins: [
       remarkGfm,

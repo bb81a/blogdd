@@ -1,12 +1,14 @@
+import { allBookmarks } from '@/.contentlayer/generated/index.mjs'
 import { compareDesc } from 'date-fns'
 
 import {
-  Author,
-  Post,
-  Snippet,
   allAuthors,
   allPosts,
   allSnippets,
+  type Author,
+  type Bookmarks,
+  type Post,
+  type Snippet,
 } from '.contentlayer/generated'
 
 export function getAllPosts(): Post[] {
@@ -23,6 +25,10 @@ export function getAllSnippets(): Snippet[] {
 
 export function getAllAuthors(): Author[] {
   return allAuthors.sort((a, b) => Number(a.name > b.name))
+}
+
+export function getBookmarks(): Bookmarks {
+  return allBookmarks[0] as Bookmarks
 }
 
 export function getPost(slug: string): Post | undefined {
