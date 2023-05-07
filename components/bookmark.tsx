@@ -16,7 +16,9 @@ export default function Bookmark({ date, bookmarks }: BookmarkProps) {
         <time dateTime={date} className="text-sm font-semibold">
           {formatDate(date, 'LLL MM, yyyy')}
         </time>
-        <span className="block h-[1px] w-full flex-1 bg-slate-100">&nbsp;</span>
+        <span className="block h-[1px] w-full flex-1 bg-slate-100 dark:bg-slate-800">
+          &nbsp;
+        </span>
         <div className="text-sm text-slate-500 dark:text-slate-400">
           {bookmarks.length} bookmark{bookmarks.length > 1 ? 's' : ''}
         </div>
